@@ -1,0 +1,28 @@
+.info2{
+    font-size: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: 'Russo One';
+    border-radius: 10px;
+    padding-left: 1%;  
+    padding-right: 1%;
+    width: 75%;
+    height: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="img3">
+                    <img src="0-3_Double_Down.webp">
+                </div>
+                

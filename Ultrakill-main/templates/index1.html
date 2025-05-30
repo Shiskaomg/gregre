@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@200..700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <a1 href="">Home    <img class="icons" src="image 5.svg" alt=""></a>
+            <a href="/lore">Navigation    <img class="icons" src="image 4.svg" alt="">     </a>
+            <a1 href="">FAQ    <img src="image 3.svg" class="icons" alt=""></a>
+            <a1 href="">Language    <img src="image 1.svg" alt="" class="icons"></a>
+        </nav>
+        <div class="buttons">
+            <button class="log" id="loginButton" href="">Log in</button>
+        <a class="singup" href="">Sign up</a>
+        </div>
+        
+    </header>
+    <main>
+        <div class="head1">MANKIND IS DEAD.</div>
+        <div class="head1">BLOOD IS FUEL.</div>
+        <div class="head1">HELL IS FULL.</div>
+        <section class="about">
+            <div class="info">
+                <p>На даний момент у грі є 5 базових гармат, з 3 варіаціями для кожної з них, не враховуючи альтернативні варіанти для револьвера, дробовика та гвоздика</p>
+                <p>Ви знайдете їхні базові форми на певних рівнях, а варіанти купуються на терміналі після розблокування базової форми (окрім зброї). Альтернативними варіантами є секретні (необов’язкові) розблоковані</p>
+
+            
+
+            </div>
+            <div class="images">
+                <img src ="{{ url_for('static', filename='photos/weaponsss.png') }}"width=520, height=250>
+            </div>
+        </section>
+        <section>
+    <div class="head1">WEAPONS</div>
+    {% for weapon in weapons %}
+    <div class="weapon_item">
+    <div class="info1">
+        <p><strong>{{ weapon[1] }}</strong></p>
+        <p>Ціна: {{ weapon[2] }}</p>
+        <p>Урон: {{ weapon[3] }}</p>
+        <p>Урон в голову: {{ weapon[4] }}</p>
+        <p>Альтернативний урон: {{ weapon[5] }}</p>
+        <p>Альтернативний урон в голову: {{ weapon[6] }}</p>
+    </div>
+    <div class="images">
+        {# !!!!!!!ПОТРІБНО КАРТИНИК ПРЕЙМЕНУВАТИ В ІД ЗБРОЇ!!!!!! #}
+        <img src="{{ url_for('static', filename='photos/' + weapon[0] + '.png') }}" width="190" height="220">
+        {# !!!!!!!ПОТРІБНО КАРТИНИК ПРЕЙМЕНУВАТИ В ІД ЗБРОЇ!!!!!! #}
+    </div>
+    </div>
+{% endfor %}
+
+</section>
+
+            <div class="head1">ACT 1</div>
+            <div class="head1">LIMBO</div>
+        <section class="about1">
+            <div class="info2">
+                <p>Рівні з 1-1 до 1-4 є рівнями ЛІМБО 1 АКТу. Це місце для душ людей, якім подобається ця атмосфера, а ще подобається чистильникам.</p>
+                <p>Рівень 1-1: HEART OF THE SUNRISE. <span class="text">Рівень нас зустрічає приємною музикою, атмосферою, та скульптурами. Діставшись до однієї з кімнат нас атакує новий противник - Дрон (англ. Drone). ЧЕЛЛЕНДЖ: пройти рівень меньше ніж за 10 секунд(потрібно кинути монетку в фонтан)</span></p>
+        </section>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Вхід в акаунт</h2>
+                <form novalidate>
+                    <label for="username">Логін:</label>
+                    <input type="text" id="username" name="username" required>
+                    <br>
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br>
+                    <button type="submit" class="submit">Увійти</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="logo">
+            <img src="image 6.png" alt="">
+        </div>
+        <div class="text">
+            <p class="buy_text">Завантажити Ultrakill</p>
+            <a href="https://store.steampowered.com/app/1229490/ULTRAKILL/" class="buy">Отримати гру</a>
+        </div>
+        <div class="social">
+            
+            <a href="https://x.com/ultrakillgame?mx=2" class="twitter"><img src="twitter.png" alt=""></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</body>
+   
+</html>
